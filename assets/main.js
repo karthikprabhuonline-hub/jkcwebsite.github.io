@@ -81,13 +81,13 @@ if (reveals.length) {
           // Delay hero reveal so it starts after intro finishes
           setTimeout(() => {
             document.body.classList.add('intro-complete');
-          }, 320);
-        }, 700);
-      }, 1280);
+          }, 120);
+        }, 380);
+      }, 920);
     }, 1150);
   };
 
-  if (document.readyState === 'complete') runIntro();
-  else window.addEventListener('load', runIntro, { once: true });
+  if (document.readyState !== 'loading') runIntro();
+  else document.addEventListener('DOMContentLoaded', runIntro, { once: true });
 })();
 
